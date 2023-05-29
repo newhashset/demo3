@@ -1,0 +1,62 @@
+<!DOCTYPE html >
+
+<!--引入thymeleaf语法-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<!--    这里的内联里面必须填css-->
+    <style type="text/css" th:inline="css">
+
+        .stylel{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+        价格:<label th:text="${price}" ></label><br>
+
+        字符串:<label th:text="${str}" ></label>
+
+<!--        内联:必须和 [[${xxx}]]搭配才会把数据显示出来 -->
+        <p th:inline="text">图书数量:[[${stack}]]</p>
+
+        <p th:inline="text" class="stylel" >图书名称:[[${book.bookName}]]</p>
+
+
+        <!--        外联:th:object=""-->
+        <div th:object="${book}">
+            <p th:text="*{bookId}"></p>
+            <p th:text="*{bookName}"></p>
+            <p th:text="*{bookPassword}"></p>
+        </div>
+
+
+
+        <table style="width: 600px " border="1" cellspacing="0">
+
+            <!--caption：标题-->
+            <caption>图书信息列表</caption>
+            <!--thead:表头-->
+            <thead>
+            <!--tr:行  th:列-->
+            <tr>
+                <th>图书Id</th>
+                <th>图书名称</th>
+                <th>图书密码</th>
+            </tr>
+            </thead>
+            <!--tbody:表体-->
+            <tbody>
+
+            <!--th:each 循环标签   把books里的值进行循环遍历-->
+            <tr  th:each="b:${books}">
+                <td th:text="${b.bookId}"></td>
+                <td th:text="${b.bookName}"></td>
+                <td th:text="${b.bookPassword}"></td>
+            </tr>
+            </tbody>
+        </table>
+</body>
+</html>

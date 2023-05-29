@@ -15,7 +15,7 @@ spring:
 
 
 mybatis:
-  mapper-locations: classpath:mappers/*Mapper.xml   #????????
-  type-aliases-package: com.springboot.demo3.entity  #??????
+  mapper-locations: classpath:mappers/*Mapper.xml
+  type-aliases-package: com.springboot.demo3.entity
   configuration:
-    map-underscore-to-camel-case: true  #??????
+    map-underscore-to-camel-case: true
