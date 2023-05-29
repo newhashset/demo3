@@ -15,7 +15,7 @@ spring:
 
 
 mybatis:
-  mapper-locations: classpath:mappers/*Mapper.xml   #????????
-  type-aliases-package: com.springboot.demo3.entity  #??????
+  mapper-locations: classpath:mappers/*Mapper.xml   #映射文件的本地路径
+  type-aliases-package: com.springboot.demo3.entity  #映射的实体类
   configuration:
-    map-underscore-to-camel-case: true  #??????
+    map-underscore-to-camel-case: true  #驼峰命名
