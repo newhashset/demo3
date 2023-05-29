@@ -1,7 +1,7 @@
 server:
   port: 8088
   servlet:
-    context-path: /demo3  #�ļ���  (�ڴ���Ŀ��ʱ����Ҫ�����������Ϊ·��)
+    context-path: /demo3  #文件名  (在打开项目的时候需要输入该名字最为路径)
 spring:
   datasource:
     druid:
@@ -9,13 +9,22 @@ spring:
       url: jdbc:mysql://localhost:3306/practice?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
       username: root
       password: 245319
-      min-idle: 1  #��С������
-      max-active: 20  #���������
+      min-idle: 1  #最小连接数
+      max-active: 20  #最大连接数
 
 
 
 mybatis:
-  mapper-locations: classpath:mappers/*Mapper.xml   #ӳ���ļ��ı���·��
-  type-aliases-package: com.springboot.demo3.entity  #ӳ���ʵ����
+  mapper-locations: classpath:mappers/*Mapper.xml   #映射文件的本地路径
+  type-aliases-package: com.springboot.demo3.entity  #映射的实体类
   configuration:
-    map-underscore-to-camel-case: true  #�շ�����
+    map-underscore-to-camel-case: true  #驼峰命名
+
+
+    注意:
+    控制器(controller)不能跳转到static文件下的页面中
+    页面显示的数据为乱码时，可以将该页的gbk格式在软件的最底下改成utf-8的格式
+
+    convert:转换
+    border:边境线为 border=“1”  边境线为1
+    cellspacing:单元格间距   cellspacing="0" 单元格间距为0
